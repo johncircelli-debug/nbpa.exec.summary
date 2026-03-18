@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NBPA | FP&A Platform Evaluation — Vena Executive Summary</title>
+<title>NBPA | FP&A Platform Evaluation, Vena Executive Summary</title>
 <style>
 
 /* ============================================================
@@ -153,7 +153,16 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
    EVAL FRAMING BOX
    ============================================================ */
 .eval-box { border: 1.5px solid var(--bl); border-radius: var(--r); overflow: hidden; margin-top: 18px; break-inside: avoid; page-break-inside: avoid; }
-.eval-ttl { background: var(--td); color: #fff; font-size: 8.2pt; font-weight: 700; padding: 9px 15px; display: flex; align-items: center; justify-content: space-between; }
+.eval-ttl {
+  background: linear-gradient(135deg, var(--gd) 0%, var(--gm) 100%);
+  color: #fff;
+  font-size: 8.2pt;
+  font-weight: 700;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .eval-cols { display: grid; grid-template-columns: 1fr 1fr; }
 .ec { padding: 13px 15px; }
 .ec.left  { background: var(--slp); border-right: 1px solid var(--slm); }
@@ -177,7 +186,7 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
 .path-card p { font-size: 8.2pt; line-height: 1.5; }
 
 /* ============================================================
-   ARCHITECTURE — OLAP vs ROLAP
+   ARCHITECTURE, OLAP vs ROLAP
    ============================================================ */
 .arch-hdr { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
 .atl { border-radius: var(--r); padding: 9px 14px; display: flex; align-items: baseline; gap: 8px; }
@@ -287,7 +296,7 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
 }
 .comp-table tbody tr:last-child td { border-bottom: none; }
 
-/* Criteria column — short labels, no hyphenation, clean wrapping */
+/* Criteria column, short labels, no hyphenation, clean wrapping */
 .td-crit {
   font-weight: 700; color: var(--td); background: #FAFAFA; font-size: 7.8pt;
   hyphens: none; -webkit-hyphens: none; -ms-hyphens: none;
@@ -299,7 +308,7 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
 .td-vena   { background: var(--gp); color: var(--gd); font-weight: 500; }
 .comp-table tbody tr:nth-child(even) .td-vena { background: #E4F4EC; }
 
-/* Evidence callouts — consistent across all columns */
+/* Evidence callouts, consistent across all columns */
 .ev {
   margin-top: 5px; border-left: 2px solid; border-radius: 0 3px 3px 0;
   padding: 3px 7px; font-size: 7pt; font-style: italic; line-height: 1.35;
@@ -357,8 +366,9 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
 
 
 
+
 /* ============================================================
-   EXECUTIVE POLISH V3
+   FINAL EXECUTIVE POLISH V4
    ============================================================ */
 body {
   -webkit-font-smoothing: antialiased;
@@ -378,9 +388,26 @@ body {
   line-height: 1.5;
 }
 
-.eval-ttl { padding: 10px 15px; }
+.eval-box {
+  border: 1.5px solid var(--gl);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.eval-ttl {
+  background: linear-gradient(135deg, var(--gd) 0%, var(--gm) 100%) !important;
+  color: #fff;
+  font-size: 8.2pt;
+  font-weight: 700;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ec.left  { background: #F5F8F7; border-right: 1px solid var(--gl); }
+.ec.right { background: #F7FBF8; }
 .ec { padding: 15px 16px; }
 .ec ul li { padding: 5px 0 5px 14px; }
+.ec.left ul li { color: #4D6475; }
+.ec.right ul li { color: var(--gd); font-weight: 600; }
 
 .comp-wrap { margin-top: 8px; }
 .comp-table thead tr th { padding-top: 9px; padding-bottom: 9px; }
@@ -482,7 +509,7 @@ body {
   </div>
 
   <p class="lede">This is not just a budgeting tool decision. It is a decision about <strong>how NBPA Finance wants to operate going forward</strong> and how effectively the team can support leadership with timely, credible insight. The right platform means less time pulling reports together and more time helping the business make better decisions, with clearer visibility into tradeoffs and stronger transparency for stakeholders.</p>
-  <p class="lede">Several of the options can look similar at first because each offers some level of Excel familiarity. <strong>But long-term success is decided by more than what looks polished in a demo.</strong> What matters most is the architecture underneath, what it takes for Finance to own the platform day to day, how reporting works in practice, and whether the solution holds up as complexity grows.</p>
+  <p class="lede">Several of the options can look similar at first because each offers some level of Excel familiarity. <strong>What matters most is not how polished the demo feels, but how well the solution holds up once Finance owns it.</strong> The key questions are whether the architecture is built to scale, whether reporting works the way Finance needs it to in practice, and how much maintenance the team takes on to keep the platform running well.</p>
 
   <div class="sh">
     <span class="sn">1</span>
@@ -553,9 +580,9 @@ body {
 
   <div class="eval-box nb">
     <div class="eval-ttl">
-      <span style="color:#fff;font-weight:700;">What looks good in a demo</span>
+      <span style="color:#fff;font-weight:700;">What can look appealing early</span>
       <span style="color:rgba(255,255,255,0.45);font-size:8pt;font-weight:400;">vs.</span>
-      <span style="color:#fff;font-weight:700;">What matters after go-live</span>
+      <span style="color:#fff;font-weight:700;">What matters once the team owns it</span>
     </div>
     <div class="eval-cols">
       <div class="ec left">
@@ -563,8 +590,8 @@ body {
         <ul>
           <li>Excel-familiar interface and recognizable layout</li>
           <li>Polished dashboards and visual outputs</li>
-          <li>A lighter or simpler-sounding setup story</li>
-          <li>Easy initial workflow in a guided demo environment</li>
+          <li>A setup story that sounds lighter or easier than it may be in practice</li>
+          <li>An initial workflow that feels simple in a guided demo setting</li>
         </ul>
       </div>
       <div class="ec right">
@@ -574,7 +601,7 @@ body {
           <li>Ongoing admin burden and maintainability for a lean team</li>
           <li>Architecture that scales cleanly as complexity grows</li>
           <li>Implementation quality and dedicated post-go-live support</li>
-          <li>Long-term platform fit without rework in 12 to 24 months</li>
+          <li>Long-term platform fit without having to revisit the decision in 12 to 24 months</li>
         </ul>
       </div>
     </div>
@@ -585,11 +612,11 @@ body {
   <div class="four-paths">
     <div class="path-card nb" style="border:1.5px solid #DDDDDD;background:#FAFAFA;">
       <div class="pcn" style="color:#888;">Martus</div>
-      <p style="color:var(--tb);">The incumbent. Martus supports parts of the current process, but it is not giving NBPA the reporting agility or self-service capability Finance is looking for. Staying put is the lowest-change path, and the one most likely to preserve the same constraints that prompted this evaluation.</p>
+      <p style="color:var(--tb);">The incumbent. Martus supports parts of the current process, but it is not giving NBPA the reporting agility or self-service capability Finance is looking for. Staying put is the lowest-change path, and also the one most likely to preserve the same constraints that prompted this evaluation.</p>
     </div>
     <div class="path-card nb" style="border:1.5px solid var(--slb);background:var(--slp);">
       <div class="pcn" style="color:var(--sl);">Datarails</div>
-      <p style="color:var(--tb);">Familiar on the surface, more complex underneath. Datarails relies on a relational file-and-table structure behind the scenes. What can feel simple in a demo can turn into more admin work over time as reporting and planning needs expand.</p>
+      <p style="color:var(--tb);">Familiar on the surface, more complex underneath. Datarails relies on a relational file-and-table structure behind the scenes. What can feel simple at first can turn into more admin work over time as reporting and planning needs expand.</p>
     </div>
     <div class="path-card nb" style="border:1.5px solid #E8C060;background:#FFFBF0;">
       <div class="pcn" style="color:var(--am);">Cube</div>
@@ -616,8 +643,8 @@ body {
   <p class="subhead">The interface can look familiar across both platforms. The architecture underneath and the maintenance burden that comes with it is where these options diverge significantly.</p>
 
   <div class="arch-hdr">
-    <div class="atl v"><span class="atl-prod">Vena</span><span class="atl-tech">OLAP — Online Analytical Processing</span><span class="atl-sub">Native multi-dimensional model</span></div>
-    <div class="atl d"><span class="atl-prod">Datarails</span><span class="atl-tech">ROLAP — Relational Online Analytical Processing</span><span class="atl-sub">File and table-driven structure</span></div>
+    <div class="atl v"><span class="atl-prod">Vena</span><span class="atl-tech">OLAP, Online Analytical Processing</span><span class="atl-sub">Native multi-dimensional model</span></div>
+    <div class="atl d"><span class="atl-prod">Datarails</span><span class="atl-tech">ROLAP, Relational Online Analytical Processing</span><span class="atl-sub">File and table-driven structure</span></div>
   </div>
 
   <div class="arch-panels">
@@ -643,7 +670,7 @@ body {
       <div class="dr-arr">▼</div>
       <div class="dr-row"><div class="dr-ico">⚙️</div><div class="dr-lbl">Manual updates each time structure or data changes</div></div>
       <div class="dr-arr">▼</div>
-      <div class="dr-row"><div class="dr-ico">📊</div><div class="dr-lbl">Reports — only as reliable as all the connections behind them</div></div>
+      <div class="dr-row"><div class="dr-ico">📊</div><div class="dr-lbl">Reports, only as reliable as all the connections behind them</div></div>
       <div class="dr-band">More moving pieces every time complexity grows</div>
       <div class="pn"><strong>Result for Finance:</strong> As NBPA's entities, dimensions, and reporting needs expand, the file and connection count grows with them. Admin overhead increases rather than decreases.</div>
     </div>
@@ -694,52 +721,52 @@ body {
       <tbody>
         <tr>
           <td class="td-crit">Reporting agility</td>
-          <td class="td-martus"><span class="tag tag-warn">Core limitation</span><br>Martus is a budgeting tool built for nonprofits and churches. It does not offer the dynamic management reporting NBPA Finance needs. Reporting still routes through Sage and accounting — the exact problem this evaluation is trying to solve.</td>
-          <td class="td-dr"><span class="tag tag-slate">Structurally constrained</span><br>Proprietary formulas must be placed cell-by-cell in every report. When accounts or entities change, manual updates are required across every affected cell. Excel data is static and not refreshable. Multiple users cannot work in the same document simultaneously.<div class="ev">"We find DR a little slow when refreshing and synchronizing all the sheets." — G2 review</div></td>
-          <td class="td-cube"><span class="tag tag-amber">Limited depth</span><br>Reporting requires significant manual formatting before it is presentable outside Finance. No native drill-down capability. Users report spending 30 to 60 minutes per month running ERP imports to bring in actuals. Dashboard customization described as limited across multiple reviews.<div class="ev">"Currently there is a lack of flexibility in the reporting in Excel." — Capterra</div></td>
+          <td class="td-martus"><span class="tag tag-warn">Core limitation</span><br>Martus is a budgeting tool built for nonprofits and churches. It does not offer the dynamic management reporting NBPA Finance needs. Reporting still routes through Sage and accounting, the exact problem this evaluation is trying to solve.</td>
+          <td class="td-dr"><span class="tag tag-slate">Structurally constrained</span><br>Proprietary formulas must be placed cell-by-cell in every report. When accounts or entities change, manual updates are required across every affected cell. Excel data is static and not refreshable. Multiple users cannot work in the same document simultaneously.<div class="ev">"We find DR a little slow when refreshing and synchronizing all the sheets.", G2 review</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Limited depth</span><br>Reporting requires significant manual formatting before it is presentable outside Finance. No native drill-down capability. Users report spending 30 to 60 minutes per month running ERP imports to bring in actuals. Dashboard customization described as limited across multiple reviews.<div class="ev">"Currently there is a lack of flexibility in the reporting in Excel.", Capterra</div></td>
           <td class="td-vena"><span class="tag tag-ok">Purpose-built for this</span><br>Native Excel reporting is directly connected to the OLAP planning model. Reports update automatically when data changes. Finance builds, refreshes, and distributes reports without routing through accounting or IT. Vena Insights embeds Power BI for self-service analytics across the organization.<div class="ev">Kansas City Chiefs: 95% faster reporting. Lookout: 66% faster. iPSL: 6 weeks to 10 days.</div></td>
         </tr>
         <tr>
           <td class="td-crit">FP&amp;A self-sufficiency</td>
           <td class="td-martus"><span class="tag tag-warn">Not solving the problem</span><br>NBPA's current Martus environment is not delivering the reporting independence Finance needs. The fact that this evaluation is happening confirms it. Martus does not reduce the dependency on Sage and the accounting team that is central to NBPA's current pain.</td>
-          <td class="td-dr"><span class="tag tag-slate">Shifts burden, not removes it</span><br>Datarails' workflow is limited to assigning users to Excel files. No purpose-built input template functionality, no approval dependency logic, no model-level governance. Finance ends up managing files and mappings rather than owning a clean, centralized platform.<div class="ev">"The interface isn't intuitive, and many tasks require trial and error or additional support to complete." — Capterra, Dec 2025</div></td>
-          <td class="td-cube"><span class="tag tag-amber">Better for smaller teams</span><br>Cube has no native workflow engine — data source updates remain manual. Designed for small companies and startups, not a finance function that needs audit trails, structured approvals, and genuine FP&amp;A ownership. Admin license limits can also restrict who manages the model.<div class="ev">"Missing certain features like a headcount planning module or robust forecasting capabilities in order to be an effective end-to-end FP&A platform for larger companies at scale." — Capterra</div></td>
+          <td class="td-dr"><span class="tag tag-slate">Shifts burden, not removes it</span><br>Datarails' workflow is limited to assigning users to Excel files. No purpose-built input template functionality, no approval dependency logic, no model-level governance. Finance ends up managing files and mappings rather than owning a clean, centralized platform.<div class="ev">"The interface isn't intuitive, and many tasks require trial and error or additional support to complete.", Capterra, Dec 2025</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Better for smaller teams</span><br>Cube has no native workflow engine, data source updates remain manual. Designed for small companies and startups, not a finance function that needs audit trails, structured approvals, and genuine FP&amp;A ownership. Admin license limits can also restrict who manages the model.<div class="ev">"Missing certain features like a headcount planning module or robust forecasting capabilities in order to be an effective end-to-end FP&A platform for larger companies at scale.", Capterra</div></td>
           <td class="td-vena"><span class="tag tag-ok">Designed to reduce dependency</span><br>Full multi-step approval workflows with dependency logic, audit trails, version control, and role-based permissions. Finance owns the model end to end without relying on IT or accounting to produce management reports.<div class="ev">Turner Enterprises: 100% user adoption across 57 users. PetIQ: scaled through acquisitions with Finance in control throughout.</div></td>
         </tr>
         <tr>
           <td class="td-crit">Architecture and scalability</td>
-          <td class="td-martus"><span class="tag tag-neutral">Entry-level budgeting tool</span><br>Martus is not a full FP&amp;A platform — it is a collaborative budgeting tool primarily used by nonprofits and churches (~750 customers). NBPA's analytical requirements have already grown beyond what Martus can support, which is why this evaluation is underway.</td>
-          <td class="td-dr"><span class="tag tag-slate">ROLAP — compounds over time</span><br>Relational file-and-table model. As entities, dimensions, and reporting needs grow, the relational joins, mappings, and connections grow with them. Performance constraints emerge from large join operations. System stability has been flagged by customers when models scale.<div class="ev">"One day it would work and one day it would not." — Customer reported post-implementation, Vena competitive research</div></td>
-          <td class="td-cube"><span class="tag tag-warn">Hard architectural ceiling</span><br>Cube has a hard cap of 8 dimensions total — 4 are predefined by the vendor and cannot be customized. When an organization needs more, they must purchase additional separate "Cubes" at added cost, then maintain ETL connections between them.<div class="ev">TrueContext selected Cube for its "free implementation," hit dimension limits within months, and moved to Vena. Vena supports up to 20 dimensions natively.</div></td>
-          <td class="td-vena"><span class="tag tag-ok">OLAP — built to scale</span><br>Vena's native OLAP engine supports up to 20 dimensions with shared hierarchies across all users, models, and reports. Adding new entities or dimensions does not require rebuilding the model or managing new connection layers. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester.</td>
+          <td class="td-martus"><span class="tag tag-neutral">Entry-level budgeting tool</span><br>Martus is not a full FP&amp;A platform, it is a collaborative budgeting tool primarily used by nonprofits and churches (~750 customers). NBPA's analytical requirements have already grown beyond what Martus can support, which is why this evaluation is underway.</td>
+          <td class="td-dr"><span class="tag tag-slate">ROLAP, compounds over time</span><br>Relational file-and-table model. As entities, dimensions, and reporting needs grow, the relational joins, mappings, and connections grow with them. Performance constraints emerge from large join operations. System stability has been flagged by customers when models scale.<div class="ev">"One day it would work and one day it would not.", Customer reported post-implementation, Vena competitive research</div></td>
+          <td class="td-cube"><span class="tag tag-warn">Hard architectural ceiling</span><br>Cube has a hard cap of 8 dimensions total, 4 are predefined by the vendor and cannot be customized. When an organization needs more, they must purchase additional separate "Cubes" at added cost, then maintain ETL connections between them.<div class="ev">TrueContext selected Cube for its "free implementation," hit dimension limits within months, and moved to Vena. Vena supports up to 20 dimensions natively.</div></td>
+          <td class="td-vena"><span class="tag tag-ok">OLAP, built to scale</span><br>Vena's native OLAP engine supports up to 20 dimensions with shared hierarchies across all users, models, and reports. Adding new entities or dimensions does not require rebuilding the model or managing new connection layers. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester.</td>
         </tr>
         <tr>
           <td class="td-crit">Maintainability</td>
-          <td class="td-martus"><span class="tag tag-warn">No path forward</span><br>Choosing Martus means preserving the current operating model. The admin burden, the workarounds, and the dependency on Sage remain unchanged. For a lean Finance team, this is not a solution — it is a continuation of the problem.</td>
-          <td class="td-dr"><span class="tag tag-slate">Admin burden grows with the model</span><br>Datarails' relational structure requires Finance to maintain proprietary cell-level formulas, file mappings, and data connections manually. When accounts, departments, or scenarios change, every affected file must be updated by hand. Setup complexity often exceeds what was represented during the sales process.<div class="ev">"It took weeks/months into the implementation of asking and eventually getting a new, more experienced implementer to show us this process." — Capterra, Nov 2025</div></td>
-          <td class="td-cube"><span class="tag tag-amber">Simpler upfront, shakier at scale</span><br>No workflows, no native headcount planning module, limited admin licensing, and no automatic account mapping when new GL accounts are created — each requires manual intervention. Real-world reviews note reliability concerns that become apparent over time.<div class="ev">"I find myself often saying 'I wish it was more reliable.'" — Software Advice review</div></td>
+          <td class="td-martus"><span class="tag tag-warn">No path forward</span><br>Choosing Martus means preserving the current operating model. The admin burden, the workarounds, and the dependency on Sage remain unchanged. For a lean Finance team, this is not a solution, it is a continuation of the problem.</td>
+          <td class="td-dr"><span class="tag tag-slate">Admin burden grows with the model</span><br>Datarails' relational structure requires Finance to maintain proprietary cell-level formulas, file mappings, and data connections manually. When accounts, departments, or scenarios change, every affected file must be updated by hand. Setup complexity often exceeds what was represented during the sales process.<div class="ev">"It took weeks/months into the implementation of asking and eventually getting a new, more experienced implementer to show us this process.", Capterra, Nov 2025</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Simpler upfront, shakier at scale</span><br>No workflows, no native headcount planning module, limited admin licensing, and no automatic account mapping when new GL accounts are created, each requires manual intervention. Real-world reviews note reliability concerns that become apparent over time.<div class="ev">"I find myself often saying 'I wish it was more reliable.'", Software Advice review</div></td>
           <td class="td-vena"><span class="tag tag-ok">One model, no IT required</span><br>Designed to be owned and maintained by Finance without IT involvement for routine changes. Hierarchy updates propagate automatically across all templates, reports, and workflows. North American-based 24/5 support with a dedicated customer success manager.<div class="ev">PRGX saves 3 weeks of monthly reporting time every month. ATB Financial: "The implementation team was first class." BARC 2025: 9.6/10 price-to-value.</div></td>
         </tr>
         <tr>
           <td class="td-crit">Implementation quality</td>
-          <td class="td-martus"><span class="tag tag-neutral">Simple but shallow</span><br>Martus offers fast onboarding — sometimes within hours. The simplicity of setup reflects the simplicity of the platform. There is no deep implementation methodology because the tool does not go deep. The gap NBPA needs to close will not be addressed by a faster version of what already exists.</td>
-          <td class="td-dr"><span class="tag tag-warn">Post-purchase complexity is real</span><br>Datarails frequently leads with a low-cost or free implementation. Customers have discovered the true complexity of the file and mapping model only after go-live, requiring new implementers months in. In August 2024, the National Advertising Division investigated Datarails for undisclosed financial relationships with a publication that gave it prominent software rankings.<div class="ev">RMG selected Datarails partly for its free implementation; data integrity concerns and inconsistent system behavior emerged post-go-live — Vena competitive research</div></td>
-          <td class="td-cube"><span class="tag tag-amber">Light story, real tradeoffs</span><br>Cube also leads with a "free" or low-cost implementation appeal. TrueContext accepted this, hit Cube's dimension ceiling within months, and moved to Vena. ARM Institute had a similar experience. When structural limits surface, the cost of switching far exceeds the initial savings. Cube was founded in 2018 with approximately 150 employees vs. Vena's 13 years and 700+.<div class="ev">"We could never get an automatic data connection with NetSuite working, so it is always a manual upload process each month." — Capterra</div></td>
-          <td class="td-vena"><span class="tag tag-ok">Structured and proven</span><br>Vena follows a four-phase methodology: Discovery, Design, Build, Deploy. North American-based consultants, FP&amp;A experts, and dedicated project managers guide each implementation. Every customer receives a dedicated customer success manager and 24/5 support through phone, email, and chat.<div class="ev">"The customer support, the learning, the project implementation team — they were all just first class." — Michael To, Director of Finance, ATB Financial</div></td>
+          <td class="td-martus"><span class="tag tag-neutral">Simple but shallow</span><br>Martus offers fast onboarding, sometimes within hours. The simplicity of setup reflects the simplicity of the platform. There is no deep implementation methodology because the tool does not go deep. The gap NBPA needs to close will not be addressed by a faster version of what already exists.</td>
+          <td class="td-dr"><span class="tag tag-warn">Post-purchase complexity is real</span><br>Datarails frequently leads with a low-cost or free implementation. Customers have discovered the true complexity of the file and mapping model only after go-live, requiring new implementers months in. In August 2024, the National Advertising Division investigated Datarails for undisclosed financial relationships with a publication that gave it prominent software rankings.<div class="ev">RMG selected Datarails partly for its free implementation; data integrity concerns and inconsistent system behavior emerged post-go-live, Vena competitive research</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Light story, real tradeoffs</span><br>Cube also leads with a "free" or low-cost implementation appeal. TrueContext accepted this, hit Cube's dimension ceiling within months, and moved to Vena. ARM Institute had a similar experience. When structural limits surface, the cost of switching far exceeds the initial savings. Cube was founded in 2018 with approximately 150 employees vs. Vena's 13 years and 700+.<div class="ev">"We could never get an automatic data connection with NetSuite working, so it is always a manual upload process each month.", Capterra</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Structured and proven</span><br>Vena follows a four-phase methodology: Discovery, Design, Build, Deploy. North American-based consultants, FP&amp;A experts, and dedicated project managers guide each implementation. Every customer receives a dedicated customer success manager and 24/5 support through phone, email, and chat.<div class="ev">"The customer support, the learning, the project implementation team, they were all just first class.", Michael To, Director of Finance, ATB Financial</div></td>
         </tr>
         <tr>
           <td class="td-crit">Long-term fit</td>
           <td class="td-martus"><span class="tag tag-warn">Wrong category for NBPA</span><br>Martus markets itself explicitly to nonprofits, churches, faith-based organizations, and small businesses. NBPA is a major professional sports association with growing complexity and management reporting demands. Martus is not in the same category as a solution for this kind of organization.</td>
-          <td class="td-dr"><span class="tag tag-slate">Better for lighter needs</span><br>Works well for organizations that want to automate basic consolidation. For finance teams that need a true multi-dimensional planning and reporting foundation — with dimensions, hierarchies, workflows, and scalable governance — Datarails' relational architecture becomes a limiting factor rather than an enabler.</td>
+          <td class="td-dr"><span class="tag tag-slate">Better for lighter needs</span><br>Works well for organizations that want to automate basic consolidation. For finance teams that need a true multi-dimensional planning and reporting foundation, with dimensions, hierarchies, workflows, and scalable governance, Datarails' relational architecture becomes a limiting factor rather than an enabler.</td>
           <td class="td-cube"><span class="tag tag-amber">A lighter layer, not a deeper foundation</span><br>Cube is explicitly designed for small businesses and startups. Not recognized by the major industry analysts that evaluate enterprise-grade FP&amp;A platforms. As reporting complexity grows, Cube's dimension limits, missing modules, and lack of workflow infrastructure consistently become roadblocks.</td>
-          <td class="td-vena"><span class="tag tag-ok">Purpose-built for organizations like NBPA</span><br>Vena works with professional sports organizations and players associations including the NFL Players Association. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester. 1,800+ customers. Top-ranked by BPM Partners 2025-2026. A platform NBPA Finance can grow into, not out of.</td>
+          <td class="td-vena"><span class="tag tag-ok">Purpose-built for organizations like NBPA</span><br>Vena works with professional sports organizations and players associations including the NFL Players Association. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester. 2,500+ customers. Top-ranked by BPM Partners 2025-2026. A platform NBPA Finance can grow into, not out of.</td>
         </tr>
         <tr>
           <td class="td-crit">Replacement risk</td>
-          <td class="td-martus"><span class="tag tag-warn">Already here</span><br>NBPA is already in the process of replacing or supplementing Martus because it is not delivering. The cost of staying — continued accounting dependency, limited self-service, and deferred analytical capability — is real and ongoing. Choosing Martus again means choosing the same outcome.</td>
+          <td class="td-martus"><span class="tag tag-warn">Already here</span><br>NBPA is already in the process of replacing or supplementing Martus because it is not delivering. The cost of staying, continued accounting dependency, limited self-service, and deferred analytical capability, is real and ongoing. Choosing Martus again means choosing the same outcome.</td>
           <td class="td-dr"><span class="tag tag-warn">Well-documented pattern</span><br>Multiple organizations selected Datarails for its lighter entry point and free implementation, then experienced system stability issues, scalability limits, and post-implementation complexity that required replacement. The relational file model that makes Datarails feel simple upfront is the same architecture that makes it harder to maintain over time.<div class="ev">Vena's competitive research documents multiple Datarails-to-Vena transitions driven by stability concerns, reporting limitations, and post-implementation support gaps.</div></td>
-          <td class="td-cube"><span class="tag tag-warn">Short-term fit, real risk</span><br>The Cube-to-Vena transition is the most documented replacement pattern in this evaluation. TrueContext and ARM Institute both chose Cube for its lower friction entry point and moved to Vena when dimension limits and reporting depth became blockers.<div class="ev">TrueContext: chose Cube for "free implementation," hit dimension ceiling within months, migrated to Vena — Vena competitive analysis deck</div></td>
-          <td class="td-vena"><span class="tag tag-ok">Lower long-term risk</span><br>Vena's OLAP architecture, maintainable model, Finance-owned governance, and structured implementation methodology all reduce the conditions that lead to replacement. The 1,800+ customer base and 13-year track record reflect a platform organizations stay on, not one they outgrow.<div class="ev">BARC 2025: 9.6/10 price-to-value. BPM Partners 2025-2026: top-ranked. G2: 8.5/10. 11 consecutive years as a Value Matrix leader.</div></td>
+          <td class="td-cube"><span class="tag tag-warn">Short-term fit, real risk</span><br>The Cube-to-Vena transition is the most documented replacement pattern in this evaluation. TrueContext and ARM Institute both chose Cube for its lower friction entry point and moved to Vena when dimension limits and reporting depth became blockers.<div class="ev">TrueContext: chose Cube for "free implementation," hit dimension ceiling within months, migrated to Vena, Vena competitive analysis deck</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Lower long-term risk</span><br>Vena's OLAP architecture, maintainable model, Finance-owned governance, and structured implementation methodology all reduce the conditions that lead to replacement. The 2,500+ customer base and 13-year track record reflect a platform organizations stay on, not one they outgrow.<div class="ev">BARC 2025: 9.6/10 price-to-value. BPM Partners 2025-2026: top-ranked. G2: 8.5/10. 11 consecutive years as a Value Matrix leader.</div></td>
         </tr>
       </tbody>
     </table>
@@ -772,11 +799,11 @@ body {
     </div>
     <div class="nbpa-box nb">
       <div class="nb-out">Shorter budgeting and forecasting cycles</div>
-      <div class="nb-prf"><span class="nb-stat">6 weeks to 10 days</span><span class="nb-stl">iPSL — budget and forecast cycle</span>Volotea saw roughly 50% faster FP&amp;A activity, with about two days per week returned to the finance team. Shorter cycles create more room for analysis, business partnership, and leadership support.</div>
+      <div class="nb-prf"><span class="nb-stat">6 weeks to 10 days</span><span class="nb-stl">iPSL, budget and forecast cycle</span>Volotea saw roughly 50% faster FP&amp;A activity, with about two days per week returned to the finance team. Shorter cycles create more room for analysis, business partnership, and leadership support.</div>
     </div>
     <div class="nbpa-box nb">
       <div class="nb-out">More finance capacity for analysis and decision support</div>
-      <div class="nb-prf"><span class="nb-stat">3 weeks saved per month</span><span class="nb-stl">PRGX — monthly reporting time</span>Lookout achieved 66% faster reporting. Time recovered from manual work can be redirected to scenario analysis, stakeholder conversations, and better decision support.</div>
+      <div class="nb-prf"><span class="nb-stat">3 weeks saved per month</span><span class="nb-stl">PRGX, monthly reporting time</span>Lookout achieved 66% faster reporting. Time recovered from manual work can be redirected to scenario analysis, stakeholder conversations, and better decision support.</div>
     </div>
   </div>
 
