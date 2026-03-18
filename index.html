@@ -354,6 +354,68 @@ p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
 .cl-bot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 9px; }
 .cl-bot .conf { font-size: 7.2pt; color: var(--tm); letter-spacing: 0.07em; text-transform: uppercase; }
 
+/* UNIVERSAL RESPONSIVE FIX (all devices) */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Main container */
+.page {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Remove fixed "paper" behavior on smaller screens */
+@media screen and (max-width: 1024px) {
+  .page {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 16px 28px 16px;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+/* Stack layouts and prevent overflow */
+@media screen and (max-width: 768px) {
+  .ph,
+  .ph-left,
+  .pf,
+  .grid,
+  .row,
+  .two-col,
+  .three-col {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .page * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, p, span {
+    word-break: break-word;
+  }
+}
+
+/* Force any wide elements to behave */
+* {
+  max-width: 100%;
+}
 </style>
 </head>
 <body>
