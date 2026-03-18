@@ -481,6 +481,31 @@ body {
 }
 .closing { margin-top: 14px; }
 
+/* FIXED LAYOUT WITH ZOOM AND PAN */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  min-width: 8.5in;
+}
+
+.page {
+  width: 8.5in;
+  max-width: none;
+  margin: 0 auto 24px auto;
+  box-sizing: border-box;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+</style>
 </style>
 </head>
 <body>
