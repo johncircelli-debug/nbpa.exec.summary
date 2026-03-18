@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NBPA | FP&A Platform Evaluation — Vena Executive Summary</title>
+<style>
+
+/* ============================================================
+   PRINT-FIRST
+   ============================================================ */
+@page { size: letter portrait; margin: 0; }
+
+@media print {
+  html, body { background: #fff !important; margin: 0 !important; padding: 0 !important; width: 8.5in !important; }
+  .page { box-shadow: none !important; margin: 0 !important; border-radius: 0 !important; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: avoid; break-after: avoid; }
+  .nb { break-inside: avoid; page-break-inside: avoid; }
+  .pf { position: absolute; }
+}
+
+/* ============================================================
+   RESET & TOKENS
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --gd: #1B5E3B; --gm: #27794F; --gl: #D6EDE2; --ga: #3FAD72; --gp: #F2FAF6;
+  --td: #1A1A1A; --tb: #333333; --tm: #666666; --bl: #E2E2E2;
+  --sl: #3D4F63; --slp: #F0F3F6; --slm: #D8E0E8; --slb: #A8B8C8;
+  --am: #D4880C; --alp: #FEF5E6;
+  --rm: #B03030;
+  --r: 5px;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 9.5pt; line-height: 1.52; color: var(--tb);
+  background: #D4D4D4;
+  display: flex; flex-direction: column; align-items: center; padding: 24px 0;
+}
+
+/* ============================================================
+   PAGE CONTAINERS
+   ============================================================ */
+.page {
+  width: 8.5in;
+  min-height: 11in;
+  padding: 0.48in 0.58in 0.62in 0.58in;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+  margin-bottom: 24px;
+  page-break-after: always; break-after: page;
+}
+.page:last-child { page-break-after: avoid; break-after: avoid; }
+
+/* ============================================================
+   PAGE HEADER & FOOTER
+   ============================================================ */
+.ph {
+  display: flex; align-items: center; justify-content: space-between;
+  padding-bottom: 9px; border-bottom: 2.5px solid var(--gd); margin-bottom: 20px;
+}
+.ph-left { display: flex; align-items: center; gap: 10px; }
+.logo-pill {
+  background: var(--gd); color: #fff; font-size: 10.5pt; font-weight: 700;
+  letter-spacing: 0.04em; padding: 3px 11px; border-radius: 3px; text-transform: uppercase;
+}
+.ph-tag { font-size: 7.8pt; color: var(--tm); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; }
+.ph-num { font-size: 7.5pt; color: var(--tm); }
+
+.pf {
+  position: absolute; bottom: 0.3in; left: 0.58in; right: 0.58in;
+  border-top: 1px solid var(--gl); padding-top: 6px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.pf span { font-size: 7.5pt; color: var(--tm); }
+.pf .fb { font-weight: 700; color: var(--gd); }
+
+/* ============================================================
+   COVER BLOCK
+   ============================================================ */
+.cover-block {
+  background: var(--gd); color: #fff; border-radius: var(--r);
+  padding: 26px 30px; margin-bottom: 24px; position: relative; overflow: hidden;
+}
+.cover-block::before { content:''; position:absolute; right:-40px; top:-40px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,0.05); }
+.cover-block::after  { content:''; position:absolute; right:80px; bottom:-60px; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,0.03); }
+.cover-eyebrow { font-size: 7.8pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ga); font-weight: 600; margin-bottom: 8px; }
+.cover-h1 { font-size: 21pt; font-weight: 700; line-height: 1.2; margin-bottom: 9px; }
+.cover-sub { font-size: 9.8pt; color: rgba(255,255,255,0.82); }
+.cover-meta { display: flex; justify-content: space-between; margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); }
+.cover-meta-item { display: flex; flex-direction: column; }
+.cm-label { font-size: 7.5pt; color: rgba(255,255,255,0.55); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
+.cm-val { font-size: 8.2pt; color: #fff; font-weight: 500; line-height: 1.55; }
+
+/* ============================================================
+   SECTION HEADINGS & TYPOGRAPHY
+   ============================================================ */
+.sh { display: flex; align-items: center; margin-bottom: 14px; }
+.sn {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--gd); color: #fff; width: 20px; height: 20px; border-radius: 50%;
+  font-size: 7.8pt; font-weight: 700; margin-right: 8px; flex-shrink: 0;
+}
+.sh h2 { font-size: 12pt; font-weight: 700; color: var(--gd); letter-spacing: -0.01em; }
+.subhead { font-size: 8.5pt; color: var(--tm); margin-top: -9px; margin-bottom: 11px; line-height: 1.4; }
+
+.lede { font-size: 9.8pt; line-height: 1.65; color: var(--td); margin-bottom: 18px; }
+.lede strong { color: var(--gd); }
+p { margin-bottom: 8px; } p:last-child { margin-bottom: 0; }
+
+/* ============================================================
+   NEED CARDS
+   ============================================================ */
+.needs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; margin-bottom: 18px; }
+.need-card {
+  border: 1.5px solid var(--gl); border-radius: var(--r);
+  padding: 14px 14px 13px; background: #fff;
+  break-inside: avoid; page-break-inside: avoid;
+}
+.need-card .nci { font-size: 18px; margin-bottom: 8px; display: block; }
+.need-card h3 { font-size: 8.8pt; font-weight: 700; color: var(--gd); margin-bottom: 5px; }
+.need-card p { font-size: 8.2pt; color: var(--tb); line-height: 1.52; }
+
+/* ============================================================
+   TAKEAWAY BAND
+   ============================================================ */
+.tb-band {
+  background: var(--gd); color: #fff; border-radius: var(--r);
+  padding: 13px 18px; display: flex; align-items: center; gap: 12px;
+}
+.tb-lbl { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ga); white-space: nowrap; flex-shrink: 0; }
+.tb-band p { font-size: 9pt; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.55; }
+
+/* ============================================================
+   TWO-COL & BULLET PANELS
+   ============================================================ */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+.bp { background: #fff; border: 1.5px solid var(--bl); border-radius: var(--r); padding: 14px 16px; break-inside: avoid; page-break-inside: avoid; }
+.bp h3 { font-size: 9pt; font-weight: 700; color: var(--gd); margin-bottom: 10px; padding-bottom: 7px; border-bottom: 1px solid var(--gl); }
+.bp ul { list-style: none; padding: 0; margin: 0; }
+.bp ul li { font-size: 8.8pt; padding: 6px 0 6px 18px; position: relative; border-bottom: 1px solid #F0F0F0; line-height: 1.45; color: var(--tb); }
+.bp ul li:last-child { border-bottom: none; }
+.bp ul li::before { content: ''; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 50%; background: var(--ga); }
+.bp.muted ul li::before { background: var(--sl); }
+
+/* ============================================================
+   EVAL FRAMING BOX
+   ============================================================ */
+.eval-box { border: 1.5px solid var(--bl); border-radius: var(--r); overflow: hidden; margin-top: 18px; break-inside: avoid; page-break-inside: avoid; }
+.eval-ttl { background: var(--td); color: #fff; font-size: 8.2pt; font-weight: 700; padding: 9px 15px; display: flex; align-items: center; justify-content: space-between; }
+.eval-cols { display: grid; grid-template-columns: 1fr 1fr; }
+.ec { padding: 13px 15px; }
+.ec.left  { background: var(--slp); border-right: 1px solid var(--slm); }
+.ec.right { background: var(--gp); }
+.ec h4 { font-size: 8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; }
+.ec.left  h4 { color: var(--sl); }
+.ec.right h4 { color: var(--gd); }
+.ec ul { list-style: none; padding: 0; margin: 0; }
+.ec ul li { font-size: 8.5pt; padding: 4px 0 4px 14px; position: relative; line-height: 1.4; }
+.ec.left  ul li::before { content: '·'; position: absolute; left: 1px; color: #8899AA; font-weight: 700; font-size: 14pt; top: -1px; line-height: 1.2; }
+.ec.right ul li::before { content: '✓'; position: absolute; left: 0; color: var(--gd); font-weight: 700; font-size: 9pt; }
+.ec.left  ul li { color: var(--sl); }
+.ec.right ul li { color: var(--gd); font-weight: 500; }
+
+/* ============================================================
+   FOUR PATHS
+   ============================================================ */
+.four-paths { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 11px; }
+.path-card { border-radius: var(--r); padding: 12px; break-inside: avoid; page-break-inside: avoid; }
+.path-card .pcn { font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 6px; }
+.path-card p { font-size: 8.2pt; line-height: 1.5; }
+
+/* ============================================================
+   ARCHITECTURE — OLAP vs ROLAP
+   ============================================================ */
+.arch-hdr { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.atl { border-radius: var(--r); padding: 9px 14px; display: flex; align-items: baseline; gap: 8px; }
+.atl.v { background: var(--gd); }
+.atl.d { background: var(--sl); }
+.atl-prod { font-size: 9pt; font-weight: 700; }
+.atl.v .atl-prod { color: #fff; }
+.atl.d .atl-prod { color: #fff; }
+.atl-tech { font-size: 7.5pt; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
+.atl.v .atl-tech { background: rgba(255,255,255,0.2); color: rgba(255,255,255,0.95); }
+.atl.d .atl-tech { background: rgba(255,255,255,0.18); color: rgba(255,255,255,0.9); }
+.atl-sub { font-size: 7.2pt; color: rgba(255,255,255,0.6); margin-left: auto; white-space: nowrap; }
+
+.arch-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.ap { border-radius: var(--r); padding: 14px 15px 12px; }
+.ap.v { background: var(--gd); }
+.ap.d { background: var(--slp); border: 1.5px solid var(--slb); }
+
+.vl-stack { display: flex; flex-direction: column; gap: 5px; margin-bottom: 9px; }
+.vl { border-radius: 4px; padding: 7px 10px; text-align: center; font-size: 7.8pt; font-weight: 600; }
+.vl.top  { background: rgba(255,255,255,0.17); color: #fff; }
+.vl.core { background: rgba(255,255,255,0.27); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+.vl.sub  { background: rgba(255,255,255,0.11); color: rgba(255,255,255,0.87); font-size: 7.5pt; }
+.vl.base { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.65); font-size: 7.5pt; }
+.vl-arr  { text-align: center; color: rgba(255,255,255,0.27); font-size: 10pt; line-height: 1; }
+
+.dr-hdr { background: rgba(61,79,99,0.1); border: 1px solid var(--slb); border-radius: 4px; padding: 5px 9px; text-align: center; font-size: 7.8pt; font-weight: 700; color: var(--sl); margin-bottom: 8px; }
+.dr-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.dr-ico { background: var(--sl); color: #fff; border-radius: 3px; width: 28px; height: 28px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.dr-lbl { background: var(--slm); border: 1px solid var(--slb); border-radius: 3px; padding: 4px 8px; font-size: 7.5pt; font-weight: 600; color: var(--sl); flex: 1; line-height: 1.3; }
+.dr-arr { text-align: center; color: var(--sl); opacity: 0.5; font-size: 10pt; line-height: 1; padding-left: 34px; margin: 1px 0; }
+.dr-band { background: var(--sl); border-radius: 3px; padding: 6px 9px; margin-top: 8px; text-align: center; font-size: 7.5pt; font-weight: 700; color: #fff; letter-spacing: 0.03em; }
+
+.pn { padding-top: 8px; margin-top: 6px; font-size: 7.5pt; line-height: 1.4; }
+.ap.v .pn { border-top: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.72); }
+.ap.v .pn strong { color: var(--ga); }
+.ap.d .pn { border-top: 1px solid var(--slb); color: var(--sl); }
+.ap.d .pn strong { color: var(--sl); }
+
+/* ============================================================
+   BUSINESS IMPACT CARDS
+   ============================================================ */
+.imp-hdr { font-size: 9pt; font-weight: 700; color: var(--td); margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+.imp-hdr::after { content: ''; flex: 1; height: 1.5px; background: var(--bl); }
+.imp-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 9px; margin-bottom: 10px; }
+.imp-card { border: 1.5px solid var(--slm); border-radius: var(--r); background: var(--slp); padding: 10px 11px; break-inside: avoid; page-break-inside: avoid; }
+.imp-card .ico { font-size: 15px; margin-bottom: 5px; display: block; }
+.imp-card h4 { font-size: 8pt; font-weight: 700; color: var(--sl); margin-bottom: 3px; }
+.imp-card p  { font-size: 7.8pt; color: #4A5568; line-height: 1.45; margin: 0; }
+
+.compound-box { background: #F5F7FA; border: 1.5px solid var(--slm); border-radius: var(--r); padding: 9px 14px; margin-bottom: 11px; display: flex; gap: 10px; align-items: flex-start; break-inside: avoid; page-break-inside: avoid; }
+.cpd-lbl { font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--sl); white-space: nowrap; flex-shrink: 0; padding-top: 1px; }
+.cpd-pts { display: flex; flex-wrap: wrap; gap: 3px 14px; list-style: none; padding: 0; margin: 0; }
+.cpd-pts li { font-size: 8.2pt; color: var(--tb); line-height: 1.4; display: flex; align-items: baseline; gap: 4px; }
+.cpd-pts li::before { content: '›'; color: var(--sl); font-weight: 700; font-size: 11pt; flex-shrink: 0; line-height: 1; }
+
+.arch-strip { background: var(--gp); border: 1.5px solid var(--gl); border-radius: var(--r); padding: 10px 15px; display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
+.as-lbl { font-size: 7.5pt; font-weight: 700; color: var(--gd); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; padding-top: 1px; }
+.as-pts { display: flex; flex-wrap: wrap; gap: 4px 18px; list-style: none; padding: 0; margin: 0; }
+.as-pts li { font-size: 8.5pt; color: var(--gd); font-weight: 500; padding-left: 13px; position: relative; }
+.as-pts li::before { content: '✓'; position: absolute; left: 0; color: var(--ga); font-weight: 700; font-size: 9pt; }
+
+/* ============================================================
+   VENDOR RISK BAR + COMPARISON TABLE
+   Both use: 14% criteria col | 21.5% × 4 vendor cols = 100%
+   table-layout:fixed ensures declared widths are honoured.
+   hyphens:none on td-crit prevents "Maintainabili-ty" breaks.
+   ============================================================ */
+.comp-wrap { margin-top: 6px; }
+
+.risk-bar {
+  display: grid;
+  grid-template-columns: 14% 21.5% 21.5% 21.5% 21.5%;
+  gap: 0;
+  border-radius: var(--r) var(--r) 0 0;
+  overflow: hidden;
+  border: 1.5px solid var(--bl);
+}
+.rb-lbl { background: #F0F0F0; padding: 8px 10px; display: flex; align-items: center; font-size: 7.5pt; font-weight: 700; color: var(--tm); text-transform: uppercase; letter-spacing: 0.06em; }
+.rc { padding: 8px 10px; border-left: 1px solid var(--bl); }
+.rc .rcn { font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.rc .rct { font-size: 7.2pt; line-height: 1.3; }
+.rc.m  { background: #FFF3F3; } .rc.m  .rcn { color: var(--rm); } .rc.m  .rct { color: #884444; }
+.rc.dr { background: var(--slp); } .rc.dr .rcn { color: var(--sl); } .rc.dr .rct { color: var(--sl); }
+.rc.cb { background: var(--alp); } .rc.cb .rcn { color: var(--am); } .rc.cb .rct { color: #5A3A05; }
+.rc.v  { background: var(--gp); border-left: 2px solid var(--ga); } .rc.v .rcn { color: var(--gd); } .rc.v .rct { color: var(--gm); }
+
+.comp-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  font-size: 7.8pt; table-layout: fixed;
+  border-radius: 0 0 var(--r) var(--r); overflow: hidden;
+  border: 1.5px solid var(--bl); border-top: none;
+}
+.comp-table thead tr th {
+  padding: 8px 9px; font-size: 7.2pt; font-weight: 700; text-align: left;
+  letter-spacing: 0.06em; text-transform: uppercase; border-bottom: 2px solid var(--bl);
+}
+.th-crit   { width: 14%;   background: #F2F2F2;  color: var(--tm); }
+.th-martus { width: 21.5%; background: #F7F7F7;  color: #888; }
+.th-dr     { width: 21.5%; background: var(--slp); color: var(--sl); }
+.th-cube   { width: 21.5%; background: var(--alp); color: var(--am); }
+.th-vena   { width: 21.5%; background: var(--gd);  color: #fff; }
+
+.comp-table tbody tr td {
+  padding: 8px 9px; border-bottom: 1px solid var(--bl);
+  vertical-align: top; line-height: 1.42; overflow-wrap: break-word;
+}
+.comp-table tbody tr:last-child td { border-bottom: none; }
+
+/* Criteria column — short labels, no hyphenation, clean wrapping */
+.td-crit {
+  font-weight: 700; color: var(--td); background: #FAFAFA; font-size: 7.8pt;
+  hyphens: none; -webkit-hyphens: none; -ms-hyphens: none;
+  word-break: keep-all; overflow-wrap: normal;
+}
+.td-martus { background: #FAFAFA; color: #555; }
+.td-dr     { background: var(--slp); color: var(--sl); }
+.td-cube   { background: #FFFBF2; color: #5A4010; }
+.td-vena   { background: var(--gp); color: var(--gd); font-weight: 500; }
+.comp-table tbody tr:nth-child(even) .td-vena { background: #E4F4EC; }
+
+/* Evidence callouts — consistent across all columns */
+.ev {
+  margin-top: 5px; border-left: 2px solid; border-radius: 0 3px 3px 0;
+  padding: 3px 7px; font-size: 7pt; font-style: italic; line-height: 1.35;
+}
+.td-martus .ev { border-color: #CCCCCC; background: #F5F5F5; color: #666; }
+.td-dr     .ev { border-color: var(--slb); background: rgba(61,79,99,0.07); color: var(--sl); }
+.td-cube   .ev { border-color: #E8C060; background: rgba(212,136,12,0.07); color: #5A3A05; }
+.td-vena   .ev { border-color: var(--ga); background: rgba(27,94,59,0.07); color: var(--gd); }
+
+/* Tags */
+.tag { display: inline-block; font-size: 7pt; font-weight: 700; padding: 1px 5px; border-radius: 10px; margin-bottom: 2px; letter-spacing: 0.02em; }
+.tag-warn    { background: #FDECEA; color: var(--rm); }
+.tag-slate   { background: var(--slm); color: var(--sl); }
+.tag-amber   { background: var(--alp); color: var(--am); }
+.tag-ok      { background: var(--gl); color: var(--gd); }
+.tag-neutral { background: #EEEEEE; color: #666; }
+
+/* ============================================================
+   PAGE 4
+   ============================================================ */
+.rec-banner { background: var(--gd); color: #fff; border-radius: var(--r); padding: 14px 22px; margin-bottom: 15px; break-inside: avoid; page-break-inside: avoid; }
+.rec-ey { font-size: 7.5pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ga); margin-bottom: 5px; }
+.rec-banner h2 { font-size: 13pt; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+.rec-banner p  { font-size: 9pt; color: rgba(255,255,255,0.87); line-height: 1.55; }
+
+.nbpa-outs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 13px; }
+.nbpa-box { border: 1.5px solid var(--gl); border-radius: var(--r); padding: 12px 13px; background: #fff; display: flex; flex-direction: column; gap: 8px; break-inside: avoid; page-break-inside: avoid; }
+.nb-out   { font-size: 9pt; font-weight: 700; color: var(--gd); line-height: 1.3; }
+.nb-prf   { background: var(--gp); border-radius: 4px; padding: 7px 9px; font-size: 8pt; color: var(--tb); line-height: 1.45; }
+.nb-stat  { font-size: 13pt; font-weight: 800; color: var(--gd); line-height: 1.1; display: block; margin-bottom: 2px; }
+.nb-stl   { font-size: 7.5pt; font-weight: 700; color: var(--gm); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 2px; }
+
+.matters-box { background: var(--gp); border: 1.5px solid var(--gl); border-radius: var(--r); padding: 11px 15px; margin-bottom: 12px; break-inside: avoid; page-break-inside: avoid; }
+.matters-box h4 { font-size: 9pt; font-weight: 700; color: var(--gd); margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--gl); }
+.mg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+.mi { font-size: 8.2pt; color: var(--tb); padding: 3px 0 3px 14px; position: relative; line-height: 1.4; }
+.mi::before { content: '✓'; position: absolute; left: 0; color: var(--ga); font-weight: 700; font-size: 9pt; top: 2px; }
+
+.ctx-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 12px; }
+.ctx-box { border: 1px solid var(--gl); border-radius: var(--r); padding: 10px 12px; display: flex; gap: 9px; align-items: flex-start; break-inside: avoid; page-break-inside: avoid; }
+.ctx-box.gb { background: var(--gp); }
+.ctx-box.ab { background: var(--alp); border-color: #E0A820; }
+.ctx-ico { width: 26px; height: 26px; border-radius: 50%; background: var(--gd); color: #fff; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.ctx-ico.ai { background: var(--am); }
+.ctx-box p { font-size: 8.2pt; color: var(--tb); line-height: 1.5; margin: 0; }
+.ctx-box p strong { color: var(--gd); }
+.ctx-box.ab p strong { color: #7A4E0A; }
+
+.closing { border-top: 2px solid var(--gd); padding-top: 12px; margin-top: 12px; }
+.closing p { font-size: 9pt; color: var(--td); line-height: 1.6; margin-bottom: 6px; }
+.closing p strong { color: var(--gd); }
+.cl-bot { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 9px; }
+.cl-bot .conf { font-size: 7.2pt; color: var(--tm); letter-spacing: 0.07em; text-transform: uppercase; }
+
+
+
+
+/* ============================================================
+   EXECUTIVE POLISH V3
+   ============================================================ */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cover-h1 { letter-spacing: -0.02em; }
+.cover-sub { max-width: 86%; line-height: 1.52; }
+.lede { font-size: 9.6pt; line-height: 1.62; }
+
+.tb-band {
+  padding: 12px 16px;
+  align-items: flex-start;
+}
+.tb-band p {
+  font-size: 8.8pt;
+  line-height: 1.5;
+}
+
+.eval-ttl { padding: 10px 15px; }
+.ec { padding: 15px 16px; }
+.ec ul li { padding: 5px 0 5px 14px; }
+
+.comp-wrap { margin-top: 8px; }
+.comp-table thead tr th { padding-top: 9px; padding-bottom: 9px; }
+.comp-table tbody tr td { padding-top: 9px; padding-bottom: 9px; }
+.tag { margin-bottom: 4px; }
+
+.nbpa-outs { gap: 14px; margin-bottom: 14px; }
+.nbpa-box {
+  border: 1.5px solid var(--gl);
+  border-radius: 7px;
+  padding: 0;
+  overflow: hidden;
+  gap: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.nb-out {
+  font-size: 8.4pt;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.38;
+  background: linear-gradient(135deg, var(--gd) 0%, var(--gm) 100%);
+  padding: 10px 12px;
+  letter-spacing: 0;
+}
+.nb-prf {
+  background: #F8FBF9;
+  border-top: 1px solid var(--gl);
+  border-radius: 0;
+  padding: 11px 12px 12px;
+  font-size: 8.1pt;
+  color: var(--tb);
+  line-height: 1.55;
+}
+.nb-stat {
+  font-size: 12.8pt;
+  font-weight: 700;
+  color: var(--gd);
+  line-height: 1.08;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.nb-stl {
+  font-size: 7.1pt;
+  font-weight: 600;
+  color: #4B7A62;
+  text-transform: none;
+  letter-spacing: 0;
+  display: block;
+  margin-bottom: 6px;
+}
+.matters-box {
+  background: linear-gradient(180deg, #F7FBF8 0%, var(--gp) 100%);
+}
+.matters-box h4 {
+  font-size: 8.8pt;
+}
+.mi {
+  font-size: 8.1pt;
+  line-height: 1.42;
+}
+.ctx-box.gb {
+  background: linear-gradient(180deg, #F7FBF8 0%, var(--gp) 100%);
+}
+.ctx-box.ab {
+  background: linear-gradient(180deg, #FFF8EC 0%, var(--alp) 100%);
+}
+.ctx-box p {
+  font-size: 8.1pt;
+  line-height: 1.48;
+}
+.closing { margin-top: 14px; }
+
+</style>
+</head>
+<body>
+
+
+<!-- PAGE 1 ============================================================ -->
+<div class="page">
+  <div class="ph">
+    <div class="ph-left">
+      <span class="logo-pill">Vena</span>
+      <span class="ph-tag">Prepared for National Basketball Players Association</span>
+    </div>
+    <span class="ph-num">Page 1 of 4</span>
+  </div>
+
+  <div class="cover-block nb">
+    <div class="cover-eyebrow">FP&amp;A Platform Evaluation &nbsp;·&nbsp; Executive Summary &nbsp;·&nbsp; 2026</div>
+    <div class="cover-h1">Choosing the Right FP&amp;A Platform for NBPA</div>
+    <div class="cover-sub">A practical view of which platform is best equipped to support how NBPA Finance needs to work going forward.</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><span class="cm-label">Prepared for</span><span class="cm-val">Andre Moore</span><span class="cm-val">Erin Carmichael</span></div>
+      <div class="cover-meta-item"><span class="cm-label">Prepared by</span><span class="cm-val">John Circelli</span><span class="cm-val">Vena Solutions</span></div>
+      <div class="cover-meta-item"><span class="cm-label">Platforms evaluated</span><span class="cm-val">Vena &nbsp;|&nbsp; Datarails &nbsp;|&nbsp; Cube &nbsp;|&nbsp; Martus</span></div>
+      <div class="cover-meta-item"><span class="cm-label">Classification</span><span class="cm-val">Confidential</span></div>
+    </div>
+  </div>
+
+  <p class="lede">This is not just a budgeting tool decision. It is a decision about <strong>how NBPA Finance wants to operate going forward</strong> and how effectively the team can support leadership with timely, credible insight. The right platform means less time pulling reports together and more time helping the business make better decisions, with clearer visibility into tradeoffs and stronger transparency for stakeholders.</p>
+  <p class="lede">Several of the options can look similar at first because each offers some level of Excel familiarity. <strong>But long-term success is decided by more than what looks polished in a demo.</strong> What matters most is the architecture underneath, what it takes for Finance to own the platform day to day, how reporting works in practice, and whether the solution holds up as complexity grows.</p>
+
+  <div class="sh">
+    <span class="sn">1</span>
+    <h2>What NBPA Finance Needs from Its Next Platform</h2>
+  </div>
+
+  <div class="needs-grid">
+    <div class="need-card nb">
+      <span class="nci"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="4" width="18" height="14" rx="2" stroke="#1B5E3B" stroke-width="1.5" fill="none"/><path d="M6 9h10M6 13h6" stroke="#3FAD72" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <h3>Management Reporting Agility</h3>
+      <p>FP&amp;A needs to build, refresh, and share management reports independently, without routing requests through Sage or the accounting team each cycle.</p>
+    </div>
+    <div class="need-card nb">
+      <span class="nci"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#1B5E3B" stroke-width="1.5" fill="none"/><path d="M11 7v4l2.5 2.5" stroke="#3FAD72" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+      <h3>A Platform FP&amp;A Can Own</h3>
+      <p>With a lean team, the platform must be maintainable without IT involvement. Finance should control the model, manage cycles, and adapt reporting without outside help for routine tasks.</p>
+    </div>
+    <div class="need-card nb">
+      <span class="nci"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 17L7 11L11 14L16 7L20 10" stroke="#1B5E3B" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="10" r="2" fill="#3FAD72"/></svg></span>
+      <h3>Scalable Foundation for Growing Complexity</h3>
+      <p>As NBPA's structure and reporting needs evolve, the platform must scale cleanly across entities, dimensions, and use cases without creating new maintenance burden.</p>
+    </div>
+    <div class="need-card nb">
+      <span class="nci"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 11L10 13L14 9" stroke="#1B5E3B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="8" stroke="#3FAD72" stroke-width="1.5" fill="none"/></svg></span>
+      <h3>Low-Risk Implementation and Long-Term Fit</h3>
+      <p>A lean finance team cannot absorb a difficult rollout or a platform that needs replacing in 18 months. Implementation quality and platform depth matter as much as features.</p>
+    </div>
+  </div>
+
+  <div class="tb-band nb">
+    <span class="tb-lbl">What matters after the demo</span>
+    <p>Architecture, maintainability, implementation quality, and long-term platform fit matter more than surface-level Excel familiarity. Several options can look compelling in a guided demo. The more important question is which one Finance can realistically own, maintain, and rely on month after month.</p>
+  </div>
+
+  <div class="pf"><span class="fb">Vena Solutions</span><span>NBPA FP&amp;A Platform Evaluation &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026</span></div>
+</div>
+
+
+<!-- PAGE 2 ============================================================ -->
+<div class="page">
+  <div class="ph">
+    <div class="ph-left"><span class="logo-pill">Vena</span><span class="ph-tag">NBPA FP&amp;A Platform Evaluation</span></div>
+    <span class="ph-num">Page 2 of 4</span>
+  </div>
+
+  <div class="sh"><span class="sn">2</span><h2>Where NBPA Finance Is Today and How to Evaluate the Options</h2></div>
+
+  <div class="two-col">
+    <div class="bp muted nb">
+      <h3>What is getting in Finance's way today</h3>
+      <ul>
+        <li>Reporting still leans too heavily on Sage and the accounting team. Finance does not yet have the self-service reporting independence it needs</li>
+        <li>FP&amp;A is spending too much time getting information and not enough time analyzing, advising, and acting on it</li>
+        <li>Time is lost requesting, rebuilding, and reinterpreting reports that should be available on demand</li>
+        <li>A lean team cannot afford another platform that adds admin complexity or becomes a short-term fit requiring replacement</li>
+      </ul>
+    </div>
+    <div class="bp nb">
+      <h3>What to pressure-test in the evaluation</h3>
+      <ul>
+        <li>How quickly can FP&amp;A produce management-ready reports on its own, without routing requests through accounting or ERP exports</li>
+        <li>How much ongoing admin work sits behind the interface and does that burden grow as the business changes</li>
+        <li>How well does the platform scale as dimensions, entities, and reporting use cases evolve over time</li>
+        <li>How much implementation risk and post-go-live complexity is the team taking on relative to what it gains</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="eval-box nb">
+    <div class="eval-ttl">
+      <span style="color:#fff;font-weight:700;">What looks good in a demo</span>
+      <span style="color:rgba(255,255,255,0.45);font-size:8pt;font-weight:400;">vs.</span>
+      <span style="color:#fff;font-weight:700;">What matters after go-live</span>
+    </div>
+    <div class="eval-cols">
+      <div class="ec left">
+        
+        <ul>
+          <li>Excel-familiar interface and recognizable layout</li>
+          <li>Polished dashboards and visual outputs</li>
+          <li>A lighter or simpler-sounding setup story</li>
+          <li>Easy initial workflow in a guided demo environment</li>
+        </ul>
+      </div>
+      <div class="ec right">
+        
+        <ul>
+          <li>Management reporting agility without accounting dependency</li>
+          <li>Ongoing admin burden and maintainability for a lean team</li>
+          <li>Architecture that scales cleanly as complexity grows</li>
+          <li>Implementation quality and dedicated post-go-live support</li>
+          <li>Long-term platform fit without rework in 12 to 24 months</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sh" style="margin-top:18px;"><span class="sn">3</span><h2>The Four Paths Under Evaluation</h2></div>
+
+  <div class="four-paths">
+    <div class="path-card nb" style="border:1.5px solid #DDDDDD;background:#FAFAFA;">
+      <div class="pcn" style="color:#888;">Martus</div>
+      <p style="color:var(--tb);">The incumbent. Martus supports parts of the current process, but it is not giving NBPA the reporting agility or self-service capability Finance is looking for. Staying put is the lowest-change path, and the one most likely to preserve the same constraints that prompted this evaluation.</p>
+    </div>
+    <div class="path-card nb" style="border:1.5px solid var(--slb);background:var(--slp);">
+      <div class="pcn" style="color:var(--sl);">Datarails</div>
+      <p style="color:var(--tb);">Familiar on the surface, more complex underneath. Datarails relies on a relational file-and-table structure behind the scenes. What can feel simple in a demo can turn into more admin work over time as reporting and planning needs expand.</p>
+    </div>
+    <div class="path-card nb" style="border:1.5px solid #E8C060;background:#FFFBF0;">
+      <div class="pcn" style="color:var(--am);">Cube</div>
+      <p style="color:var(--tb);">Lighter weight today, potentially limiting tomorrow. Cube can look appealing as an easier entry point, but it raises real questions about long-term depth, flexibility, and scalability for a growing FP&amp;A function.</p>
+    </div>
+    <div class="path-card nb" style="border:2px solid var(--gd);background:var(--gp);">
+      <div class="pcn" style="color:var(--gd);">Vena &nbsp;✓ Recommended</div>
+      <p style="color:var(--tb);">A finance-owned platform that combines Excel familiarity with a purpose-built, multi-dimensional OLAP foundation for planning, reporting, and analysis. It is designed to reduce dependency, strengthen decision support, and give Finance a platform it can grow with.</p>
+    </div>
+  </div>
+
+  <div class="pf"><span class="fb">Vena Solutions</span><span>NBPA FP&amp;A Platform Evaluation &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026</span></div>
+</div>
+
+
+<!-- PAGE 3 ============================================================ -->
+<div class="page">
+  <div class="ph">
+    <div class="ph-left"><span class="logo-pill">Vena</span><span class="ph-tag">NBPA FP&amp;A Platform Evaluation</span></div>
+    <span class="ph-num">Page 3 of 4</span>
+  </div>
+
+  <div class="sh"><span class="sn">4</span><h2>Same Excel Feel. Very Different Foundations.</h2></div>
+  <p class="subhead">The interface can look familiar across both platforms. The architecture underneath and the maintenance burden that comes with it is where these options diverge significantly.</p>
+
+  <div class="arch-hdr">
+    <div class="atl v"><span class="atl-prod">Vena</span><span class="atl-tech">OLAP — Online Analytical Processing</span><span class="atl-sub">Native multi-dimensional model</span></div>
+    <div class="atl d"><span class="atl-prod">Datarails</span><span class="atl-tech">ROLAP — Relational Online Analytical Processing</span><span class="atl-sub">File and table-driven structure</span></div>
+  </div>
+
+  <div class="arch-panels">
+    <div class="ap v nb">
+      <div style="font-size:8pt;font-weight:600;color:rgba(255,255,255,0.58);margin-bottom:9px;font-style:italic;">OLAP stores data in a pre-computed, multi-dimensional structure purpose-built for financial analysis. One central model, shared by everyone.</div>
+      <div class="vl-stack">
+        <div class="vl top"><span style="font-size:10px;margin-right:4px;">📊</span> Reporting, Dashboards &amp; Decision Support</div>
+        <div class="vl-arr">▲</div>
+        <div class="vl core"><div style="font-size:8.2pt;font-weight:700;margin-bottom:2px;">One Central Finance Model</div><div style="font-size:7.5pt;color:rgba(255,255,255,0.72);">Shared dimensions &nbsp;·&nbsp; Shared hierarchies &nbsp;·&nbsp; All users</div></div>
+        <div class="vl-arr">▲</div>
+        <div class="vl sub"><span style="font-size:10px;margin-right:4px;">📝</span> Excel Input Templates &amp; Workflow</div>
+        <div class="vl-arr">▲</div>
+        <div class="vl base">ERP &amp; Source Data (Sage, HR Systems)</div>
+      </div>
+      <div class="pn"><strong>Result for Finance:</strong> One model to maintain. Changes propagate automatically. Reporting, planning, and workflow stay in sync. Less time managing the platform, more time using it.</div>
+    </div>
+    <div class="ap d nb">
+      <div style="font-size:8pt;font-weight:600;color:var(--sl);margin-bottom:9px;font-style:italic;">ROLAP stores data in relational tables accessed through joins and queries. More files and connections must be maintained behind each report.</div>
+      <div class="dr-hdr">What Finance has to keep aligned for every report</div>
+      <div class="dr-row"><div class="dr-ico">📄</div><div class="dr-lbl">Multiple source files and Excel workbooks to maintain</div></div>
+      <div class="dr-arr">▼</div>
+      <div class="dr-row"><div class="dr-ico">🔗</div><div class="dr-lbl">Relational tables, joins, and mapping connections</div></div>
+      <div class="dr-arr">▼</div>
+      <div class="dr-row"><div class="dr-ico">⚙️</div><div class="dr-lbl">Manual updates each time structure or data changes</div></div>
+      <div class="dr-arr">▼</div>
+      <div class="dr-row"><div class="dr-ico">📊</div><div class="dr-lbl">Reports — only as reliable as all the connections behind them</div></div>
+      <div class="dr-band">More moving pieces every time complexity grows</div>
+      <div class="pn"><strong>Result for Finance:</strong> As NBPA's entities, dimensions, and reporting needs expand, the file and connection count grows with them. Admin overhead increases rather than decreases.</div>
+    </div>
+  </div>
+
+  <div class="imp-hdr">Business impact for NBPA Finance</div>
+  <div class="imp-grid">
+    <div class="imp-card nb"><span class="ico">⚠️</span><h4>Formula Fragility</h4><p>Cell-by-cell proprietary formulas break when file structures shift. Every report rebuild creates new points of failure for a lean team.</p></div>
+    <div class="imp-card nb"><span class="ico">🔄</span><h4>Constant Remapping</h4><p>Each change to entities, accounts, or dimensions requires manually updating mappings across multiple files and tables.</p></div>
+    <div class="imp-card nb"><span class="ico">📋</span><h4>Template Proliferation</h4><p>Input files multiply across departments and cycles. Keeping versions aligned becomes an ongoing admin responsibility that falls on Finance.</p></div>
+    <div class="imp-card nb"><span class="ico">🕐</span><h4>Ongoing Admin Overhead</h4><p>Maintaining joins, lookups, and data connections is manual work the platform does not absorb. The cost compounds as the model grows.</p></div>
+  </div>
+
+  <div class="compound-box">
+    <span class="cpd-lbl">Why this compounds</span>
+    <ul class="cpd-pts">
+      <li>Each new entity, department, or reporting scenario creates more file intersections to maintain</li>
+      <li>More structural changes mean more points of failure in the relational connection layer</li>
+      <li>The maintenance burden falls on Finance instead of being handled by the platform</li>
+      <li>A centralized OLAP model absorbs this complexity; a relational file model passes it back to the team</li>
+    </ul>
+  </div>
+
+  <div class="arch-strip">
+    <span class="as-lbl">For NBPA Finance</span>
+    <ul class="as-pts">
+      <li>Faster reporting changes without updating multiple files</li>
+      <li>Less dependence on accounting for management reports</li>
+      <li>Lower maintenance burden for a lean FP&amp;A team</li>
+      <li>Better fit as entities, dimensions, and use cases grow</li>
+    </ul>
+  </div>
+
+  <div class="sh" style="margin-bottom:6px;"><span class="sn">5</span><h2>How the Options Compare Against What NBPA Actually Needs</h2></div>
+
+  <div class="comp-wrap">
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th class="th-crit">Criteria</th>
+          <th class="th-martus">Martus</th>
+          <th class="th-dr">Datarails</th>
+          <th class="th-cube">Cube</th>
+          <th class="th-vena">Vena ✓</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-crit">Reporting agility</td>
+          <td class="td-martus"><span class="tag tag-warn">Core limitation</span><br>Martus is a budgeting tool built for nonprofits and churches. It does not offer the dynamic management reporting NBPA Finance needs. Reporting still routes through Sage and accounting — the exact problem this evaluation is trying to solve.</td>
+          <td class="td-dr"><span class="tag tag-slate">Structurally constrained</span><br>Proprietary formulas must be placed cell-by-cell in every report. When accounts or entities change, manual updates are required across every affected cell. Excel data is static and not refreshable. Multiple users cannot work in the same document simultaneously.<div class="ev">"We find DR a little slow when refreshing and synchronizing all the sheets." — G2 review</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Limited depth</span><br>Reporting requires significant manual formatting before it is presentable outside Finance. No native drill-down capability. Users report spending 30 to 60 minutes per month running ERP imports to bring in actuals. Dashboard customization described as limited across multiple reviews.<div class="ev">"Currently there is a lack of flexibility in the reporting in Excel." — Capterra</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Purpose-built for this</span><br>Native Excel reporting is directly connected to the OLAP planning model. Reports update automatically when data changes. Finance builds, refreshes, and distributes reports without routing through accounting or IT. Vena Insights embeds Power BI for self-service analytics across the organization.<div class="ev">Kansas City Chiefs: 95% faster reporting. Lookout: 66% faster. iPSL: 6 weeks to 10 days.</div></td>
+        </tr>
+        <tr>
+          <td class="td-crit">FP&amp;A self-sufficiency</td>
+          <td class="td-martus"><span class="tag tag-warn">Not solving the problem</span><br>NBPA's current Martus environment is not delivering the reporting independence Finance needs. The fact that this evaluation is happening confirms it. Martus does not reduce the dependency on Sage and the accounting team that is central to NBPA's current pain.</td>
+          <td class="td-dr"><span class="tag tag-slate">Shifts burden, not removes it</span><br>Datarails' workflow is limited to assigning users to Excel files. No purpose-built input template functionality, no approval dependency logic, no model-level governance. Finance ends up managing files and mappings rather than owning a clean, centralized platform.<div class="ev">"The interface isn't intuitive, and many tasks require trial and error or additional support to complete." — Capterra, Dec 2025</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Better for smaller teams</span><br>Cube has no native workflow engine — data source updates remain manual. Designed for small companies and startups, not a finance function that needs audit trails, structured approvals, and genuine FP&amp;A ownership. Admin license limits can also restrict who manages the model.<div class="ev">"Missing certain features like a headcount planning module or robust forecasting capabilities in order to be an effective end-to-end FP&A platform for larger companies at scale." — Capterra</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Designed to reduce dependency</span><br>Full multi-step approval workflows with dependency logic, audit trails, version control, and role-based permissions. Finance owns the model end to end without relying on IT or accounting to produce management reports.<div class="ev">Turner Enterprises: 100% user adoption across 57 users. PetIQ: scaled through acquisitions with Finance in control throughout.</div></td>
+        </tr>
+        <tr>
+          <td class="td-crit">Architecture and scalability</td>
+          <td class="td-martus"><span class="tag tag-neutral">Entry-level budgeting tool</span><br>Martus is not a full FP&amp;A platform — it is a collaborative budgeting tool primarily used by nonprofits and churches (~750 customers). NBPA's analytical requirements have already grown beyond what Martus can support, which is why this evaluation is underway.</td>
+          <td class="td-dr"><span class="tag tag-slate">ROLAP — compounds over time</span><br>Relational file-and-table model. As entities, dimensions, and reporting needs grow, the relational joins, mappings, and connections grow with them. Performance constraints emerge from large join operations. System stability has been flagged by customers when models scale.<div class="ev">"One day it would work and one day it would not." — Customer reported post-implementation, Vena competitive research</div></td>
+          <td class="td-cube"><span class="tag tag-warn">Hard architectural ceiling</span><br>Cube has a hard cap of 8 dimensions total — 4 are predefined by the vendor and cannot be customized. When an organization needs more, they must purchase additional separate "Cubes" at added cost, then maintain ETL connections between them.<div class="ev">TrueContext selected Cube for its "free implementation," hit dimension limits within months, and moved to Vena. Vena supports up to 20 dimensions natively.</div></td>
+          <td class="td-vena"><span class="tag tag-ok">OLAP — built to scale</span><br>Vena's native OLAP engine supports up to 20 dimensions with shared hierarchies across all users, models, and reports. Adding new entities or dimensions does not require rebuilding the model or managing new connection layers. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester.</td>
+        </tr>
+        <tr>
+          <td class="td-crit">Maintainability</td>
+          <td class="td-martus"><span class="tag tag-warn">No path forward</span><br>Choosing Martus means preserving the current operating model. The admin burden, the workarounds, and the dependency on Sage remain unchanged. For a lean Finance team, this is not a solution — it is a continuation of the problem.</td>
+          <td class="td-dr"><span class="tag tag-slate">Admin burden grows with the model</span><br>Datarails' relational structure requires Finance to maintain proprietary cell-level formulas, file mappings, and data connections manually. When accounts, departments, or scenarios change, every affected file must be updated by hand. Setup complexity often exceeds what was represented during the sales process.<div class="ev">"It took weeks/months into the implementation of asking and eventually getting a new, more experienced implementer to show us this process." — Capterra, Nov 2025</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Simpler upfront, shakier at scale</span><br>No workflows, no native headcount planning module, limited admin licensing, and no automatic account mapping when new GL accounts are created — each requires manual intervention. Real-world reviews note reliability concerns that become apparent over time.<div class="ev">"I find myself often saying 'I wish it was more reliable.'" — Software Advice review</div></td>
+          <td class="td-vena"><span class="tag tag-ok">One model, no IT required</span><br>Designed to be owned and maintained by Finance without IT involvement for routine changes. Hierarchy updates propagate automatically across all templates, reports, and workflows. North American-based 24/5 support with a dedicated customer success manager.<div class="ev">PRGX saves 3 weeks of monthly reporting time every month. ATB Financial: "The implementation team was first class." BARC 2025: 9.6/10 price-to-value.</div></td>
+        </tr>
+        <tr>
+          <td class="td-crit">Implementation quality</td>
+          <td class="td-martus"><span class="tag tag-neutral">Simple but shallow</span><br>Martus offers fast onboarding — sometimes within hours. The simplicity of setup reflects the simplicity of the platform. There is no deep implementation methodology because the tool does not go deep. The gap NBPA needs to close will not be addressed by a faster version of what already exists.</td>
+          <td class="td-dr"><span class="tag tag-warn">Post-purchase complexity is real</span><br>Datarails frequently leads with a low-cost or free implementation. Customers have discovered the true complexity of the file and mapping model only after go-live, requiring new implementers months in. In August 2024, the National Advertising Division investigated Datarails for undisclosed financial relationships with a publication that gave it prominent software rankings.<div class="ev">RMG selected Datarails partly for its free implementation; data integrity concerns and inconsistent system behavior emerged post-go-live — Vena competitive research</div></td>
+          <td class="td-cube"><span class="tag tag-amber">Light story, real tradeoffs</span><br>Cube also leads with a "free" or low-cost implementation appeal. TrueContext accepted this, hit Cube's dimension ceiling within months, and moved to Vena. ARM Institute had a similar experience. When structural limits surface, the cost of switching far exceeds the initial savings. Cube was founded in 2018 with approximately 150 employees vs. Vena's 13 years and 700+.<div class="ev">"We could never get an automatic data connection with NetSuite working, so it is always a manual upload process each month." — Capterra</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Structured and proven</span><br>Vena follows a four-phase methodology: Discovery, Design, Build, Deploy. North American-based consultants, FP&amp;A experts, and dedicated project managers guide each implementation. Every customer receives a dedicated customer success manager and 24/5 support through phone, email, and chat.<div class="ev">"The customer support, the learning, the project implementation team — they were all just first class." — Michael To, Director of Finance, ATB Financial</div></td>
+        </tr>
+        <tr>
+          <td class="td-crit">Long-term fit</td>
+          <td class="td-martus"><span class="tag tag-warn">Wrong category for NBPA</span><br>Martus markets itself explicitly to nonprofits, churches, faith-based organizations, and small businesses. NBPA is a major professional sports association with growing complexity and management reporting demands. Martus is not in the same category as a solution for this kind of organization.</td>
+          <td class="td-dr"><span class="tag tag-slate">Better for lighter needs</span><br>Works well for organizations that want to automate basic consolidation. For finance teams that need a true multi-dimensional planning and reporting foundation — with dimensions, hierarchies, workflows, and scalable governance — Datarails' relational architecture becomes a limiting factor rather than an enabler.</td>
+          <td class="td-cube"><span class="tag tag-amber">A lighter layer, not a deeper foundation</span><br>Cube is explicitly designed for small businesses and startups. Not recognized by the major industry analysts that evaluate enterprise-grade FP&amp;A platforms. As reporting complexity grows, Cube's dimension limits, missing modules, and lack of workflow infrastructure consistently become roadblocks.</td>
+          <td class="td-vena"><span class="tag tag-ok">Purpose-built for organizations like NBPA</span><br>Vena works with professional sports organizations and players associations including the NFL Players Association. Recognized by Gartner, Nucleus Research, BPM Partners, and Forrester. 1,800+ customers. Top-ranked by BPM Partners 2025-2026. A platform NBPA Finance can grow into, not out of.</td>
+        </tr>
+        <tr>
+          <td class="td-crit">Replacement risk</td>
+          <td class="td-martus"><span class="tag tag-warn">Already here</span><br>NBPA is already in the process of replacing or supplementing Martus because it is not delivering. The cost of staying — continued accounting dependency, limited self-service, and deferred analytical capability — is real and ongoing. Choosing Martus again means choosing the same outcome.</td>
+          <td class="td-dr"><span class="tag tag-warn">Well-documented pattern</span><br>Multiple organizations selected Datarails for its lighter entry point and free implementation, then experienced system stability issues, scalability limits, and post-implementation complexity that required replacement. The relational file model that makes Datarails feel simple upfront is the same architecture that makes it harder to maintain over time.<div class="ev">Vena's competitive research documents multiple Datarails-to-Vena transitions driven by stability concerns, reporting limitations, and post-implementation support gaps.</div></td>
+          <td class="td-cube"><span class="tag tag-warn">Short-term fit, real risk</span><br>The Cube-to-Vena transition is the most documented replacement pattern in this evaluation. TrueContext and ARM Institute both chose Cube for its lower friction entry point and moved to Vena when dimension limits and reporting depth became blockers.<div class="ev">TrueContext: chose Cube for "free implementation," hit dimension ceiling within months, migrated to Vena — Vena competitive analysis deck</div></td>
+          <td class="td-vena"><span class="tag tag-ok">Lower long-term risk</span><br>Vena's OLAP architecture, maintainable model, Finance-owned governance, and structured implementation methodology all reduce the conditions that lead to replacement. The 1,800+ customer base and 13-year track record reflect a platform organizations stay on, not one they outgrow.<div class="ev">BARC 2025: 9.6/10 price-to-value. BPM Partners 2025-2026: top-ranked. G2: 8.5/10. 11 consecutive years as a Value Matrix leader.</div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pf"><span class="fb">Vena Solutions</span><span>NBPA FP&amp;A Platform Evaluation &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026</span></div>
+</div>
+
+
+<!-- PAGE 4 ============================================================ -->
+<div class="page">
+  <div class="ph">
+    <div class="ph-left"><span class="logo-pill">Vena</span><span class="ph-tag">NBPA FP&amp;A Platform Evaluation</span></div>
+    <span class="ph-num">Page 4 of 4</span>
+  </div>
+
+  <div class="rec-banner nb">
+    <div class="rec-ey">Recommendation</div>
+    <div style="font-size:8pt;color:rgba(255,255,255,0.72);margin-bottom:6px;">Best fit for a lean finance team that needs more self-service, less dependency, and a platform it can own with confidence.</div>
+    <h2>Why Vena is the strongest fit for how NBPA Finance needs to operate</h2>
+    <p>Vena best addresses the problem NBPA Finance is trying to solve: more self-service reporting, less dependency on accounting, and a platform the team can genuinely own. It keeps the Excel familiarity users value, while giving Finance a stronger implementation model and a foundation that should hold up as complexity grows.</p>
+  </div>
+
+  <div class="sh"><span class="sn">6</span><h2>What NBPA Finance Could Improve with the Right Platform</h2></div>
+
+  <div class="nbpa-outs">
+    <div class="nbpa-box nb">
+      <div class="nb-out">Faster reporting turnaround without the manual lift</div>
+      <div class="nb-prf"><span class="nb-stat">95% faster reporting</span><span class="nb-stl">Kansas City Chiefs</span>A process that once took days now takes minutes. Teams using Vena consistently report meaningful reductions in the time spent assembling, updating, and distributing reports.</div>
+    </div>
+    <div class="nbpa-box nb">
+      <div class="nb-out">Shorter budgeting and forecasting cycles</div>
+      <div class="nb-prf"><span class="nb-stat">6 weeks to 10 days</span><span class="nb-stl">iPSL — budget and forecast cycle</span>Volotea saw roughly 50% faster FP&amp;A activity, with about two days per week returned to the finance team. Shorter cycles create more room for analysis, business partnership, and leadership support.</div>
+    </div>
+    <div class="nbpa-box nb">
+      <div class="nb-out">More finance capacity for analysis and decision support</div>
+      <div class="nb-prf"><span class="nb-stat">3 weeks saved per month</span><span class="nb-stl">PRGX — monthly reporting time</span>Lookout achieved 66% faster reporting. Time recovered from manual work can be redirected to scenario analysis, stakeholder conversations, and better decision support.</div>
+    </div>
+  </div>
+
+  <div class="matters-box nb">
+    <h4>Why this matters beyond time savings</h4>
+    <div class="mg">
+      <div class="mi">Stronger stewardship of resources, with a clear and auditable view of how dollars are allocated across entities and initiatives</div>
+      <div class="mi">Better decision support for leadership, with fewer delays between the question being asked and the answer being delivered</div>
+      <div class="mi">Clearer visibility into financial tradeoffs, because planning and scenario modeling move faster when the data model is centralized and current</div>
+      <div class="mi">Greater transparency for stakeholders, with reporting that is consistent, repeatable, and owned by Finance rather than dependent on accounting coordination</div>
+    </div>
+  </div>
+
+  <div class="ctx-grid">
+    <div class="ctx-box gb nb">
+      <div class="ctx-ico">🏀</div>
+      <p><strong>Sports organizations and players associations.</strong> Vena has relevant credibility with professional sports organizations, leagues, and players associations, including the NFL Players Association. That matters for a finance function supporting a high-visibility organization with complex stakeholder reporting needs.</p>
+    </div>
+    <div class="ctx-box ab nb">
+      <div class="ctx-ico ai">⚠</div>
+      <p><strong>The risk of a short-term platform decision.</strong> Continued accounting dependency, more manual coordination as complexity grows, and the risk of revisiting the same problem again in 12 to 24 months are the real costs of choosing a platform that does not address the underlying operating-model issue. Several organizations have moved to Vena after learning that lesson the hard way.</p>
+    </div>
+  </div>
+
+  <div class="closing">
+    <p>The strongest choice is not the one that looks easiest in a demo. It is the one that best supports how NBPA Finance needs to operate going forward: more self-sufficient, more transparent, and better equipped to support leadership with confidence.</p>
+    <p><strong>For NBPA, that points to Vena.</strong> It combines Excel familiarity with a native OLAP foundation and a stronger long-term operating model for a finance team that is ready to move beyond its current constraints.</p>
+    <div class="cl-bot">
+      <span class="conf">Confidential &nbsp;·&nbsp; Prepared by John Circelli &nbsp;·&nbsp; Vena Solutions &nbsp;·&nbsp; 2026</span>
+      <span class="logo-pill" style="font-size:9.5pt;padding:3px 11px;">Vena</span>
+    </div>
+  </div>
+
+  <div class="pf"><span class="fb">Vena Solutions</span><span>NBPA FP&amp;A Platform Evaluation &nbsp;·&nbsp; Confidential &nbsp;·&nbsp; 2026</span></div>
+</div>
+
+
+</body>
+</html>
